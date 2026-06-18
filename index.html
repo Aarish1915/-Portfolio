@@ -21,7 +21,7 @@
       --surface-3: rgba(255, 255, 255, 0.04);
       --text: #F1F0ED;
       --text-2: #8A8F9A;
-      --text-3: #555B66;
+      --text-3: #7A828F;
       --border: rgba(255, 255, 255, 0.07);
       --border-2: rgba(255, 255, 255, 0.12);
       --amber: #F59E0B;
@@ -48,6 +48,8 @@
 
     html {
       scroll-behavior: smooth;
+      overflow-x: hidden;
+      max-width: 100vw;
     }
 
     body {
@@ -173,6 +175,11 @@
 
     .nav-links a {
       transition: color 0.2s;
+      min-height: 44px;
+      min-width: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .nav-links a:hover {
@@ -189,6 +196,10 @@
       border-radius: 8px;
       letter-spacing: 0.02em;
       transition: opacity 0.2s, transform 0.2s;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .nav-cta:hover {
@@ -308,6 +319,7 @@
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       font-family: var(--mono);
       font-size: 13px;
@@ -319,6 +331,8 @@
       color: var(--text);
       transition: all 0.2s ease;
       letter-spacing: 0.02em;
+      min-height: 44px;
+      min-width: 44px;
     }
 
     .btn:hover {
@@ -1703,6 +1717,14 @@
             don't cover — Linux deployment failures, auth migrations, and security gaps that only show up in production.
           </p>
           <div class="hero-actions reveal reveal-d4">
+            <a href="resume.pdf" class="btn btn-grd" id="resume-link" target="_blank" rel="noopener">
+              Resume
+              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="7 17 17 7"></polyline>
+                <polyline points="7 7 17 7 17 17"></polyline>
+              </svg>
+            </a>
             <a href="https://github.com/Aarish1915" class="btn" target="_blank" rel="noopener">
               <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 stroke-linecap="round" stroke-linejoin="round">
@@ -1721,14 +1743,6 @@
               </svg>
               LinkedIn
             </a>
-            <a href="resume.pdf" class="btn btn-grd" id="resume-link" target="_blank" rel="noopener">
-              Resume
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
-                stroke-linecap="round" stroke-linejoin="round">
-                <polyline points="7 17 17 7"></polyline>
-                <polyline points="7 7 17 7 17 17"></polyline>
-              </svg>
-            </a>
           </div>
 
           <!-- Metric strip -->
@@ -1742,8 +1756,8 @@
               <div class="hero-metric-key">Projects</div>
             </div>
             <div class="hero-metric">
-              <div class="hero-metric-val">10+</div>
-              <div class="hero-metric-key">API Endpoints</div>
+              <div class="hero-metric-val">100%</div>
+              <div class="hero-metric-key">Role-Based Auth</div>
             </div>
             <div class="hero-metric">
               <div class="hero-metric-val">Live</div>
@@ -1827,7 +1841,7 @@
           </div>
         </div>
         <div class="project-links">
-          <a href="#" class="btn btn-grd" id="demo-link">
+          <a href="https://vidtube-icl1.onrender.com/" class="btn btn-grd" id="demo-link">
             Live Demo
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
               stroke-linecap="round" stroke-linejoin="round">
@@ -1855,7 +1869,7 @@
               <div class="log-dot fix">✓</div>
               <div class="log-content">
                 <div class="log-badge fix">Fixed</div>
-                <div class="log-title">Case-sensitivity import failure on Linux</div>
+                <div class="log-title"><a href="https://github.com/Aarish1915/youtube-backend/commits/main" target="_blank" style="text-decoration: underline; color: inherit;">Case-sensitivity import failure on Linux</a></div>
                 <div class="log-text">Local development on Windows masked inconsistent file-path casing. Bug only
                   surfaced after deploying to Render's Linux containers. Root-caused by auditing every import path and
                   standardizing casing conventions across the codebase.</div>
@@ -1865,7 +1879,7 @@
               <div class="log-dot sec">⚑</div>
               <div class="log-content">
                 <div class="log-badge sec">Security</div>
-                <div class="log-title">Hardened cookie-based auth after migration</div>
+                <div class="log-title"><a href="https://github.com/Aarish1915/youtube-backend/commits/main" target="_blank" style="text-decoration: underline; color: inherit;">Hardened cookie-based auth after migration</a></div>
                 <div class="log-text">Auth middleware broke post-deployment due to different cookie attribute
                   requirements between local and production. Fixed by explicitly configuring cookie flags per
                   environment and re-verifying the full token flow.</div>
@@ -1875,8 +1889,8 @@
               <div class="log-dot sec">⚑</div>
               <div class="log-content">
                 <div class="log-badge sec">Security</div>
-                <div class="log-title">Closed authorization and token-exposure gaps</div>
-                <div class="log-text">A senior-engineer-style audit surfaced unsafe client-side token handling and weak
+                <div class="log-title"><a href="https://github.com/Aarish1915/youtube-backend/commits/main" target="_blank" style="text-decoration: underline; color: inherit;">Closed authorization and token-exposure gaps</a></div>
+                <div class="log-text">Audited against OWASP Top 10 surfaced unsafe client-side token handling and weak
                   checks on private-resource access. Resolved through middleware-level authorization and safer session
                   handling.</div>
               </div>
@@ -1947,7 +1961,7 @@
           <h4 class="card-title">Production-Grade Auth Microservice</h4>
           <p class="card-desc">A standalone authentication service in TypeScript, exploring microservice architecture
             independent of a monolith backend. Separating concerns, building clean service boundaries.</p>
-          <a href="https://github.com/Aarish1915/Patato_Production_grade" class="card-link" target="_blank"
+          <a href="https://github.com/Aarish1915/Potato_Auth_Microservice" class="card-link" target="_blank"
             rel="noopener">
             View repository
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
